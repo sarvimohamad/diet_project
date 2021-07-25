@@ -11,31 +11,31 @@
     <title>پروفایل</title>
 
     <!-- Material design icons CSS -->
-    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+    <link rel="stylesheet" href="/vendor/materializeicon/material-icons.css">
 
     <!-- Roboto fonts CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Swiper CSS -->
-    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet">
+    <link href="/vendor/swiper/css/swiper.min.css" rel="stylesheet">
 
     <!-- Chosen multiselect CSS -->
-    <link href="vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
+    <link href="/vendor/chosen_v1.8.7/chosen.min.css" rel="stylesheet">
 
     <!-- nouislider CSS -->
-    <link href="vendor/nouislider/nouislider.min.css" rel="stylesheet">
+    <link href="/vendor/nouislider/nouislider.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 <div class="row no-gutters vh-100 loader-screen">
     <div class="col align-self-center text-white text-center">
-        <img src="img/logo.png" alt="لوگو">
+        <img src="/img/logo.png" alt="لوگو">
         <h1><span class="font-weight-light">برو</span> میوه</h1>
         <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
     </div>
@@ -43,9 +43,9 @@
 <div class="sidebar">
     <div class="text-center">
         <div class="figure-menu shadow">
-            <figure><img src="img/user1.png" alt=""></figure>
+            <figure><img src="/img/user1.png" alt=""></figure>
         </div>
-        <h5 class="mb-1 ">علی لطفی</h5>
+        <h5 class="mb-1 ">{{$user->name}}</h5>
         <p class="text-mute small">تهران ، ایران</p>
         <p class="text-mute small">شماره پرونده : 124577</p>
     </div>
@@ -70,12 +70,12 @@
             <div class="list-group main-menu">
                 <a href="index.html" class="list-group-item list-group-item-action active">دریافت برنامه جدید</a>
                 <a href="notification.html" class="list-group-item list-group-item-action">برنامه های من <span class="badge badge-dark text-white">2</span></a>
-                <a href="all-products.html" class="list-group-item list-group-item-action">نمودار تغییرات</a>
+                <a href="/" class="list-group-item list-group-item-action">صفحه اصلی </a>
                 <a href="my-order.html" class="list-group-item list-group-item-action">تراکنش ها</a>
                 <a href="profile.html" class="list-group-item list-group-item-action">پروفایل</a>
                 <a href="controls.html" class="list-group-item list-group-item-action">پشتیبانی <span class="badge badge-light ml-2">ارسال</span></a>
                 <a href="setting.html" class="list-group-item list-group-item-action">تنظیمات</a>
-                <a href="login.html" class="list-group-item list-group-item-action mt-4">خروج</a>
+                <a href="/logout" class="list-group-item list-group-item-action mt-4">خروج</a>
             </div>
         </div>
     </div>
@@ -85,9 +85,9 @@
     <div class="header">
         <div class="row no-gutters">
             <div class="col-auto">
-                <button class="btn  btn-link text-dark menu-btn"><img src="img/menu.png" alt=""><span class="new-notification"></span></button>
+                <button class="btn  btn-link text-dark menu-btn"><img src="/img/menu.png" alt=""><span class="new-notification"></span></button>
             </div>
-            <div class="col text-center"><img src="img/logo-header.png" alt="" class="header-logo"></div>
+            <div class="col text-center"><img src="/img/logo-header.png" alt="" class="header-logo"></div>
             <div class="col-auto">
                 <a href="profile.html" class="btn  btn-link text-dark"><i class="material-icons">account_circle</i></a>
             </div>
@@ -98,10 +98,9 @@
         <div class="card mb-4 border-0 shadow-sm">
             <div class="text-center">
                 <div class="figure-profile shadow my-4">
-                    <figure><img src="img/user1.png" alt=""></figure>
+                    <figure><img src="/img/user1.png" alt=""></figure>
                 </div>
-                <h3 class="mb-1 ">علی لطفی</h3>
-                <p class="text-mute small">تهران ، ایران</p>
+                <h3 class="mb-1 ">{{$user->name}}</h3>
                 <p class="text-mute small">شماره پرونده : 124577</p>
                 <div class="mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18.624" height="21.504" viewBox="0 0 18.624 21.504">
@@ -278,26 +277,26 @@
 
 
     <!-- jquery, popper and bootstrap js -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
 
     <!-- swiper js -->
-    <script src="vendor/swiper/js/swiper.min.js"></script>
+    <script src="/vendor/swiper/js/swiper.min.js"></script>
 
     <!-- nouislider js -->
-    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="/vendor/nouislider/nouislider.min.js"></script>
 
     <!-- chart js -->
-    <script src="vendor/chartjs/Chart.min.js"></script>
-    <script src="vendor/chartjs/utils.js"></script>
+    <script src="/vendor/chartjs/Chart.min.js"></script>
+    <script src="/vendor/chartjs/utils.js"></script>
 
     <!-- chosen multiselect js -->
-    <script src="vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
+    <script src="/vendor/chosen_v1.8.7/chosen.jquery.min.js"></script>
 
     <!-- template custom js -->
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 
     <!-- page level script -->
     <script>

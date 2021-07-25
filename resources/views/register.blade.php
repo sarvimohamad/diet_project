@@ -12,6 +12,14 @@
             <input type="text" name="mobile" class="form-control" required placeholder="شماره همراه">
             <label class="form-control-label">شماره همراه</label>
         </div>
+        <div class="form-group float-label">
+            <input type="email" name="email" class="form-control" required placeholder="ایمیل">
+            <label class="form-control-label">ایمیل</label>
+        </div>
+        <div class="form-group float-label">
+            <input type="text" name="password" class="form-control" required placeholder="پسوورد">
+            <label class="form-control-label">پسوورد</label>
+        </div>
 
         <div class="form-group my-4 text-left">
             <div class="custom-control custom-checkbox">

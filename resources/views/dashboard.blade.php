@@ -81,7 +81,7 @@
                     <a href="index.html" class="list-group-item list-group-item-action active">فروشگاه</a>
                     <a href="notification.html" class="list-group-item list-group-item-action">اعلان <span class="badge badge-dark text-white">2</span></a>
                     <a href="all-products.html" class="list-group-item list-group-item-action">همه محصولات</a>
-                    <a href="my-order.html" class="list-group-item list-group-item-action">سفارشات</a>
+                    <a href="{{route('listCart')}}" class="list-group-item list-group-item-action">سفارشات</a>
                     <a href="{{route('show' , ['id'=>$user->id])}}" class="list-group-item list-group-item-action">پروفایل</a>
                     <a href="controls.html" class="list-group-item list-group-item-action">صفحه کنترل <span class="badge badge-light ml-2">کنترل</span></a>
                     <a href="setting.html" class="list-group-item list-group-item-action">تنظیمات</a>
@@ -108,228 +108,50 @@
             <input type="text" class="form-control form-control-lg search my-3" placeholder="جستجو کردن">
 
             <h6 class="subtitle">دسته بندی ها</h6>
-            <div class="row">
-                <!-- Swiper -->
-                <div class="swiper-container small-slide">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <div class="row no-gutters h-100">
-                                        <img src="img/orange.png" alt="" class="small-slide-right">
-                                        <div class="col-8">
-                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                            <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">مرکبات </a>
-                                            <p class="text-secondary small">پرتقال </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <div class="row no-gutters h-100">
-                                        <img src="img/banana-small.png" alt="" class="small-slide-right">
-                                        <div class="col-8">
-                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
-                                            <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">گرمسیری </a>
-                                            <p class="text-secondary small">موز ، انبه</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <div class="row no-gutters h-100">
-                                        <img src="img/grapes.png" alt="" class="small-slide-right">
-                                        <div class="col-9">
-                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                            <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">انواع توت ها</a>
-                                            <p class="text-secondary small">توت فرنگی</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <div class="row no-gutters h-100">
-                                        <img src="img/orange.png" alt="" class="small-slide-right">
-                                        <div class="col-8">
-                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                            <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">مرکبات </a>
-                                            <p class="text-secondary small"></p>پرتقال </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <div class="row no-gutters h-100">
-                                        <img src="img/banana-small.png" alt="" class="small-slide-right">
-                                        <div class="col-8">
-                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
-                                            <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">گرمسیری </a>
-                                            <p class="text-secondary small">موز ، انبه</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <div class="row no-gutters h-100">
-                                        <img src="img/grapes.png" alt="" class="small-slide-right">
-                                        <div class="col-9">
-                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                            <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">انواع توت ها</a>
-                                            <p class="text-secondary small">توت فرنگی </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <div class="row no-gutters h-100">
-                                        <img src="img/orange.png" alt="" class="small-slide-right">
-                                        <div class="col-8">
-                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                            <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">مرکبات </a>
-                                            <p class="text-secondary small">پرتقال </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <div class="row no-gutters h-100">
-                                        <img src="img/banana-small.png" alt="" class="small-slide-right">
-                                        <div class="col-8">
-                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
-                                            <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">گرمسیری </a>
-                                            <p class="text-secondary small">موز ، انبه</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <div class="row no-gutters h-100">
-                                        <img src="img/grapes.png" alt="" class="small-slide-right">
-                                        <div class="col-9">
-                                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                            <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">انواع توت ها</a>
-                                            <p class="text-secondary small">توت فرنگی ، تمشک ، بلوبری</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+{{--                <li>{{$diets->name}}</li>--}}
+{{--                <li>{{$diets->price}}</li>--}}
+{{--                <li>{{$diets->desc}}</li>--}}
+
+
+
 
             <h6 class="subtitle">محصولات <a href="all-products.html" class="float-right small">مشاهده همه</a></h6>
             <div class="row">
+
+                @foreach($data as $diets)
+
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+
+                    @if($deleted_diet)
+                        <a href="{{route('diet.undo' , ['id'=>$deleted_diet])}}">Undo</a>
+                    @endif
+
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                             <div class="badge badge-success float-right mt-1">%10 تخفیف</div>
-                            <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">سیب قرمز </a>
+
+                            <figure class="product-image"><img src="{{\Illuminate\Support\Facades\Storage::url($diets->image)}}" alt="" class=""></figure>
+                            <a href="{{route('diet.show' , ['id'=>$diets->id])}}" class="text-dark mb-1 mt-2 h6 d-block"> {{$diets->name}} </a>
                             <p class="text-secondary small mb-2">از سیملا وارد شده است</p>
-                            <h5 class="text-success font-weight-normal mb-0">120 تومان</h5>
+                            <h5 class="text-success font-weight-normal mb-0">{{$diets->price}}</h5>
                             <p class="text-secondary small text-mute mb-0">1.0 کیلوگرم</p>
-                            <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
+                            @can('show' ,\App\Models\User::class)
+                            <a href="{{route('diet.destroy' , ['id'=>$diets->id])}}"><button class="btn-danger">Delete</button></a>
+                            @endcan
+                            <form method="post" action="{{route('addCart')}}">
+                                @csrf
+                                <input type="hidden" name="diet_id" value="{{$diets->id}}">
+                                <input type="hidden" name="qty" value="{{$diets->qty}}">
+                                <input type="submit" name="" class="btn btn-default button-rounded-36 shadow-sm float-bottom-right" value="sell">
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card shadow-sm border-0 mb-4">
-                        <div class="card-body">
-                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-success float-right mt-1">%10 تخفیف</div>
-                            <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">انگور سبز</a>
-                            <p class="text-secondary small mb-2">خنک تازه</p>
-                            <h5 class="text-success font-weight-normal mb-0">150 تومان</h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 کیلوگرم</p>
-                            <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card shadow-sm border-0 mb-4">
-                        <div class="card-body">
-                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-primary float-right mt-1">%10 تخفیف</div>
-                            <figure class="product-image"><img src="img/orange-2.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">نارنجی</a>
-                            <p class="text-secondary small mb-2">شیرین و آبدار</p>
-                            <h5 class="text-success font-weight-normal mb-0">120 تومان</h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 کیلوگرم</p>
-                            <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card shadow-sm border-0 mb-4">
-                        <div class="card-body">
-                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-info float-right mt-1">%40 تخفیف</div>
-                            <figure class="product-image"><img src="img/orange-small.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">لیمو</a>
-                            <p class="text-secondary small mb-2">بیشترین تقاضا</p>
-                            <h5 class="text-success font-weight-normal mb-0">120 تومان</h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 کیلوگرم</p>
-                            <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card shadow-sm border-0 mb-4">
-                        <div class="card-body">
-                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-success float-right mt-1">%10 تخفیف</div>
-                            <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">سیب قرمز </a>
-                            <p class="text-secondary small mb-2">از سیملا وارد شده است</p>
-                            <h5 class="text-success font-weight-normal mb-0">120 تومان</h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 کیلوگرم</p>
-                            <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <div class="card shadow-sm border-0 mb-4">
-                        <div class="card-body">
-                            <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-success float-right mt-1">%10 تخفیف</div>
-                            <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
-                            <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">انگور سبز</a>
-                            <p class="text-secondary small mb-2">خنک تازه</p>
-                            <h5 class="text-success font-weight-normal mb-0">150 تومان</h5>
-                            <p class="text-secondary small text-mute mb-0">1.0 کیلوگرم</p>
-                            <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+                @endforeach()
+
         <div class="container-fluid bg-warning text-white my-3">
             <div class="row">
                 <div class="container">

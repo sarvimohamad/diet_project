@@ -7,9 +7,15 @@ use App\Classes\SmsClass;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\VerifyCodeRequest;
+use App\Models\Cart;
+use App\Models\Diet;
 use App\Models\User;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
+use App\Http\Resources\userResource;
+use Illuminate\Support\Facades\Hash;
 
 
 class AuthController extends Controller
@@ -57,28 +63,50 @@ class AuthController extends Controller
 
         $user = User::query()->create([
             'name' => $request->get('name'),
-            'mobile' => $request->get('mobile')
+            'mobile' => $request->get('mobile'),
+            'email' => $request->get('email'),
+            'password' => hash::make($request->get('password'))
         ]);
         return $this->sendVerify($user, $request->wantsJson());
     }
 
     public function login(LoginRequest $request)
     {
+        $request->validate([
+            'mobile' => '|required|sometimes|max:11',
+        ]);
+
+//        $test = Auth::login($user);
+//        dd($test);
+
         /** @var User $user */
         $user = User::query()->where('mobile', $request->get('mobile'))->first();
+//        dd($user);
         return $this->sendVerify($user, $request->wantsJson());
+
     }
 
     public function verify(VerifyCodeRequest $request)
     {
+
+        $request->validate([
+            'code' => '|required|max:6',
+        ]);
+
+
+
+
         /** @var User $user */
         $user = User::query()->where('mobile', $request->get('mobile'))->first();
         $str = md5($user->id . $user->mobile . $request->get('code'));
+
+//       $test = $request->session()->flash('exist' , $request->user());
 
         if ($request->get('hash') == $str) {
             if ($request->wantsJson()) {
                 return response()->json(['status' => 'ok']);
             }
+
             Auth::login($user);
             return redirect()->route('dashboard');
         }
@@ -94,11 +122,7 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-        public function index(Request $request)
-    {
-        $user = User::find($request->user()->id);
-        return view('dashboard' , ['user'=>$user]);
-   }
+
 
     public function show(Request $request)
     {
@@ -107,5 +131,11 @@ class AuthController extends Controller
    }
 
 
+    public function UserApi()
+    {
+        $user = User::all();
+        return userResource::collection($user);
+
+   }
 
 }
